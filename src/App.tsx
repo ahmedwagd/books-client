@@ -1,10 +1,12 @@
-function App() {
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+
+function App({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <div>
-        <h1 className="text-3xl font-bold">Test</h1>
-      </div>
-      <p>Click on the Vite and React logos to learn more</p>
+      <Navbar />
+      <main>{children}</main>
+      <Footer />
     </>
   );
 }
