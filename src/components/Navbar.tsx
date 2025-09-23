@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import logo from "@/assets/logo.svg";
 
 const Navbar = () => {
   return (
@@ -7,7 +8,10 @@ const Navbar = () => {
         <div className="md:flex md:items-center md:gap-12">
           <Link className="block text-teal-600" to="/">
             <span className="sr-only">Home</span>
-            <span className="text-3xl font-bold">Logo</span>
+            <div className="flex items-center gap-2">
+              <img src={logo} alt="logo" className="h-12 w-auto" />
+              <span className="text-2xl font-bold">Logo</span>
+            </div>
           </Link>
         </div>
 
