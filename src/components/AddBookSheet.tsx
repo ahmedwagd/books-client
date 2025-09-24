@@ -43,7 +43,7 @@ function AddBookSheet() {
           Add Book
         </Button>
       </SheetTrigger>
-      <SheetContent className="bg-white">
+      <SheetContent className="bg-white max-h-screen scroll-auto ">
         <SheetHeader>
           <SheetTitle>Edit profile</SheetTitle>
           <SheetDescription>Add new book to the collection</SheetDescription>
@@ -62,7 +62,7 @@ function AddBookSheet() {
             {/* change input to textarea from components ui */}
             <Textarea
               id="sheet-demo-username"
-              className="min-h-[150px]"
+              className="max-h-[150px]"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
