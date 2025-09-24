@@ -43,7 +43,7 @@ function EditBookSheet({ book }: { book: Book }) {
           Edit Book
         </Button>
       </SheetTrigger>
-      <SheetContent className="bg-white">
+      <SheetContent className="bg-white max-h-screen scroll-auto ">
         <SheetHeader>
           <SheetTitle>Edit profile</SheetTitle>
           <SheetDescription>
@@ -64,7 +64,7 @@ function EditBookSheet({ book }: { book: Book }) {
             {/* change input to textarea from components ui */}
             <Textarea
               id="sheet-demo-username"
-              className="min-h-[150px]"
+              className="max-h-[150px]"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
