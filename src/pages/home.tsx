@@ -35,8 +35,14 @@ function HomePage() {
         <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:flex lg:h-[80vh] lg:items-center lg:px-8">
           <div className="max-w-2xl lg:w-1/2">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+              {/* <span className="font-bold block bg-gradient-to-r from-blue-600 via-purple-500  to-indigo-400 text-transparent bg-clip-text">
+                Discover Stories
+              </span> */}
               <span className="block">Discover Stories</span>
-              <span className="block text-indigo-600">That Inspire</span>
+              <span className="font-bold block bg-gradient-to-r from-blue-600 via-purple-500  to-indigo-400 text-transparent bg-clip-text">
+                That Inspire
+              </span>
+              {/* <span className="block text-indigo-600">That Inspire</span> */}
             </h1>
             <p className="mt-6 text-lg text-gray-600">
               Explore thought-provoking articles, personal stories, and expert
@@ -51,12 +57,12 @@ function HomePage() {
                 Explore Articles
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-              <Link
+              {/* <Link
                 to="#featured"
                 className="inline-flex items-center rounded-md border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 shadow-sm transition-all hover:bg-gray-50 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 Featured Posts
-              </Link>
+              </Link> */}
             </div>
           </div>
           <div className="mt-10 lg:mt-0 lg:w-1/2">
@@ -77,8 +83,10 @@ function HomePage() {
       <section id="featured" className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Featured Books
+            <h2 className="text-3xl tracking-tight sm:text-4xl">
+              <span className="font-bold bg-gradient-to-r from-blue-600 via-purple-500  to-indigo-400 inline-block text-transparent bg-clip-text">
+                Featured Books
+              </span>
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-xl text-gray-500">
               Discover our most popular and thought-provoking books
