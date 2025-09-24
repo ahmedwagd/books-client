@@ -2,6 +2,10 @@
 
 A modern web application for managing books built with React, TypeScript, and Vite.
 
+## 🔗 Live Demo
+
+Check out the live application: [https://books-client-five.vercel.app/](https://books-client-five.vercel.app/)
+
 ## 🚀 Features
 
 - Browse and search books
