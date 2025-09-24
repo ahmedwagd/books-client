@@ -32,6 +32,8 @@ export const bookReducer = (
         books: state.books.map((book) =>
           book.id === action.payload.id ? action.payload : book
         ),
+        selectedBook: state.selectedBook?.id === action.payload.id ? action.payload : state.selectedBook,
+        loading: false,
       };
 
     case "DELETE_BOOK":

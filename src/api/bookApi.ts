@@ -43,7 +43,7 @@ export const bookApi = {
 
   // Update existing book
   update: async (id: string, book: BookFormData): Promise<Book> => {
-    const response = await apiClient.put<Book>(`/books/${id}`, book);
+    const response = await apiClient.patch<Book>(`/books/${id}`, book);
     return response.data;
   },
 

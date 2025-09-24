@@ -1,6 +1,7 @@
 import EditBookSheet from "@/components/EditBookSheet";
+import { Button } from "@/components/ui/button";
 import { useBookContext } from "@/context/BookContext";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router";
 
 function BookPage() {
@@ -44,7 +45,7 @@ function BookPage() {
   if (state.loading) {
     return (
       <section className="lg:grid lg:h-screen">
-        <div className="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+        <div className="mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
           <div className="flex justify-center items-center">
             <div className="text-lg">Loading book details...</div>
           </div>
@@ -57,17 +58,17 @@ function BookPage() {
   if (state.error) {
     return (
       <section className="lg:grid lg:h-screen">
-        <div className="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+        <div className="mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
           <div className="text-center">
             <div className="text-red-600 text-lg mb-4">
               Error: {state.error}
             </div>
-            <button
+            <Button
               onClick={() => navigate("/books")}
               className="bg-blue-500 text-white px-4 py-2 rounded"
             >
               Back to Books
-            </button>
+            </Button>
           </div>
         </div>
       </section>
@@ -78,17 +79,17 @@ function BookPage() {
   if (!state.selectedBook) {
     return (
       <section className="lg:grid lg:h-screen">
-        <div className="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+        <div className="mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
           <div className="text-center">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">
               Book not found
             </h2>
-            <button
+            <Button
               onClick={() => navigate("/books")}
               className="bg-blue-500 text-white px-4 py-2 rounded"
             >
               Back to Books
-            </button>
+            </Button>
           </div>
         </div>
       </section>
@@ -100,23 +101,17 @@ function BookPage() {
 
   return (
     <section className="lg:grid lg:h-screen">
-      <div className="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+      <div className="mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
         {/* Header with navigation and actions */}
         <div className="mb-8 flex justify-between items-center">
-          <button
-            onClick={() => navigate("/books")}
-            className="flex items-center text-blue-600 hover:text-blue-800"
-          >
+          <Button onClick={() => navigate("/books")} variant="link">
             ← Back to Books
-          </button>
-          <div className="space-x-2">
-            <EditBookSheet />
-            <button
-              onClick={handleDelete}
-              className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-            >
+          </Button>
+          <div className="flex justify-end flex-col items-center gap-2 md:block space-x-2">
+            <EditBookSheet book={book} />
+            <Button onClick={handleDelete} variant="destructive">
               Delete
-            </button>
+            </Button>
           </div>
         </div>
 
