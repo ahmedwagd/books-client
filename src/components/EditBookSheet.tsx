@@ -15,6 +15,7 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { useBookContext } from "@/context/BookContext";
 import type { Book } from "@/types";
+import { Textarea } from "./ui/textarea";
 
 function EditBookSheet({ book }: { book: Book }) {
   const { updateBook } = useBookContext();
@@ -52,26 +53,29 @@ function EditBookSheet({ book }: { book: Book }) {
         <div className="grid flex-1 auto-rows-min gap-6 px-4">
           <div className="grid gap-3">
             <Label htmlFor="sheet-demo-name">Title</Label>
-            <Input 
-              id="sheet-demo-name" 
-              value={title} 
-              onChange={(e) => setTitle(e.target.value)} 
+            <Input
+              id="sheet-demo-name"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
           </div>
           <div className="grid gap-3">
             <Label htmlFor="sheet-demo-username">Description</Label>
-            <Input 
-              id="sheet-demo-username" 
-              value={description} 
-              onChange={(e) => setDescription(e.target.value)} 
+            {/* change input to textarea from components ui */}
+            <Textarea
+              id="sheet-demo-username"
+              className="min-h-[150px]"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
           </div>
           <div className="grid gap-3">
             <Label htmlFor="sheet-demo-cover">Cover</Label>
-            <Input 
-              id="sheet-demo-cover" 
-              value={cover} 
-              onChange={(e) => setCover(e.target.value)} 
+            <Input
+              id="sheet-demo-cover"
+              type="url"
+              value={cover}
+              onChange={(e) => setCover(e.target.value)}
             />
           </div>
         </div>

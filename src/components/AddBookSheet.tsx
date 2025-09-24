@@ -14,6 +14,7 @@ import { Button } from "./ui/button";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { useBookContext } from "@/context/BookContext";
+import { Textarea } from "./ui/textarea";
 
 function AddBookSheet() {
   const { createBook } = useBookContext();
@@ -58,8 +59,10 @@ function AddBookSheet() {
           </div>
           <div className="grid gap-3">
             <Label htmlFor="sheet-demo-username">Description</Label>
-            <Input
+            {/* change input to textarea from components ui */}
+            <Textarea
               id="sheet-demo-username"
+              className="min-h-[150px]"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
